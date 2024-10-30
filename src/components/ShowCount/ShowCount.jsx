@@ -1,10 +1,15 @@
 import React from 'react'
 import './ShowCount.css'
 
-function ShowCount({ apples }) {
+function ShowCount(props) {
   return (
     <div className='show-count'>
-      <h2>¿Cuántas le quedan? {apples}</h2>
+      <h2>
+        ¿Cuántas le quedan? {props.apples}
+        {props.apples <= 0
+          ? '  ¡Toca comprar manzanas, que se las roba!'
+          : ' manzanas'}
+      </h2>
     </div>
   )
 }
